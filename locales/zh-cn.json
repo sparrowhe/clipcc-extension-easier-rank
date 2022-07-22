@@ -1,5 +1,5 @@
 {
-    "top.sparrowhe.easier_rank.name": "更简易的排行榜",
+    "top.sparrowhe.easier_rank.name": "简易排行榜",
     "top.sparrowhe.easier_rank.description": "一个基于云变量的简易排行榜",
     "top.sparrowhe.easier_rank.category": "简易排行榜",
     "top.sparrowhe.easier_rank.addToRank": "将用户 [USER] 成绩 [VALUE] 添加到排行榜",
