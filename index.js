@@ -63,7 +63,7 @@ class EasierRank extends Extension {
                 if (this.SortMode === "desc") {
                     this.Rank.data.reverse();
                 }
-                return window.btoa(JSON.stringify(this.Rank));
+                return window.btoa(encodeURIComponent(JSON.stringify(this.Rank)));
                 // this.Rank.data.push(rankData);
             }
         });
@@ -147,10 +147,17 @@ class EasierRank extends Extension {
             },
             function: (args) => {
                 try {
-                    this.Rank = JSON.parse(window.atob(args.DATA));
+                    this.Rank = JSON.parse(decodeURIComponent(window.atob(args.DATA)));
                     this.CompareMode = args.COMPARE_MODE;
                     this.SortMode = args.SORT_MODE;
                 } catch (error) {
+                    this.Rank = {
+                        meta: {
+                            RankValueName: "Score",
+                            RankPlayerName: "Player",
+                        },
+                        data: []
+                    };
                     console.log(error);
                 }
             }
