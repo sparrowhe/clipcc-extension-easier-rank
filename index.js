@@ -146,9 +146,13 @@ class EasierRank extends Extension {
                 }
             },
             function: (args) => {
-                this.Rank = JSON.parse(window.atob(args.DATA));
-                this.CompareMode = args.COMPARE_MODE;
-                this.SortMode = args.SORT_MODE;
+                try {
+                    this.Rank = JSON.parse(window.atob(args.DATA));
+                    this.CompareMode = args.COMPARE_MODE;
+                    this.SortMode = args.SORT_MODE;
+                } catch (error) {
+                    console.log(error);
+                }
             }
         });
         api.addBlock({
