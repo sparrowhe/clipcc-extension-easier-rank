@@ -149,7 +149,7 @@ class EasierRank extends Extension {
                 this.CompareMode = args.COMPARE_MODE;
                 this.SortMode = args.SORT_MODE;
             }
-        })
+        });
         api.addBlock({
             opcode: 'top.sparrowhe.easier_rank.sortRank',
             type: type.BlockType.COMMAND,
@@ -163,16 +163,66 @@ class EasierRank extends Extension {
                     this.Rank.data.reverse();
                 }
             }
+        });
+        api.addBlock({
+            opcode: 'top.sparrowhe.easier_rank.getRankListMarkdown',
+            type: type.BlockType.REPORTER,
+            messageId: 'top.sparrowhe.easier_rank.getRankListMarkdown',
+            categoryId: 'top.sparrowhe.easier_rank.category',
+            function: (args) => {
+                let rankList = "";
+                for (let i = 0; i < this.Rank.data.length; i++) {
+                    rankList += `|${i+1}|${this.Rank.data[i].player}|${this.Rank.data[i].value}|\n`;
+                }
+                return rankList;
+            }
         })
         api.addBlock({
             opcode: 'top.sparrowhe.easier_rank.getRankList',
             type: type.BlockType.REPORTER,
             messageId: 'top.sparrowhe.easier_rank.getRankList',
             categoryId: 'top.sparrowhe.easier_rank.category',
+            param: {
+                TYPE: {
+                    type: type.ParameterType.STRING,
+                    menu: [
+                        {
+                            messageId: 'top.sparrowhe.easier_rank.type.menu.player',
+                            value: 'player'
+                        },
+                        {
+                            messageId: 'top.sparrowhe.easier_rank.type.menu.value',
+                            value: 'value'
+                        },
+                        {
+                            messageId: 'top.sparrowhe.easier_rank.type.menu.all',
+                            value: 'all'
+                        }
+                    ],
+                    default: 'player'
+                },
+                SPLIT_CHAR: {
+                    type: type.ParameterType.STRING,
+                    default: '|'
+                },
+                NEWLINE_CHAR: {
+                    type: type.ParameterType.STRING,
+                    default: '/'
+                }
+            },
             function: (args) => {
                 let rankList = "";
                 for (let i = 0; i < this.Rank.data.length; i++) {
-                    rankList += `|${i+1}|${this.Rank.data[i].player}|${this.Rank.data[i].value}|\n`;
+                    if (args.TYPE === "player") {
+                        rankList += `${this.Rank.data[i].player}`;
+                    } else if (args.TYPE === "value") {
+                        rankList += `${this.Rank.data[i].value}`;
+                    } else if (args.TYPE === "all") {
+                        rankList += `${args.SPLIT_CHAR}${this.Rank.data[i].player}${args.SPLIT_CHAR}${this.Rank.data[i].value}`;
+                    }
+                    if (i !== this.Rank.data.length - 1) {
+                        rankList += args.NEWLINE_CHAR;
+                    }
                 }
                 return rankList;
             }
