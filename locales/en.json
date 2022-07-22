@@ -1,0 +1,15 @@
+{
+    "top.sparrowhe.easier_rank.name": "Easier Rank",
+    "top.sparrowhe.easier_rank.description": "A easier rank tool for cloud variables",
+    "top.sparrowhe.easier_rank.category": "Easier Rank",
+    "top.sparrowhe.easier_rank.addToRank": "Add [USER] Score [VALUE] to rank",
+    "top.sparrowhe.easier_rank.getRankScore": "Get [USER] 's rank score",
+    "top.sparrowhe.easier_rank.getRank": "Get [USER] 's rank",
+    "top.sparrowhe.easier_rank.initRank": "Inital rank using data: [DATA], compare mode: [COMPARE_MODE], sort mode: [SORT_MODE]",
+    "top.sparrowhe.easier_rank.getRankList": "Get rank list by Markdown",
+    "top.sparrowhe.easier_rank.sortRank": "Sort rank",
+    "top.sparrowhe.easier_rank.compare_mode.menu.leq": "≤",
+    "top.sparrowhe.easier_rank.compare_mode.menu.geq": "≥",
+    "top.sparrowhe.easier_rank.compare_mode.menu.asc": "Ascending",
+    "top.sparrowhe.easier_rank.compare_mode.menu.desc": "Descending"
+}

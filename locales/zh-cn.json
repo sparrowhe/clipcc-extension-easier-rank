@@ -1,0 +1,15 @@
+{
+    "top.sparrowhe.easier_rank.name": "更简易的排行版",
+    "top.sparrowhe.easier_rank.description": "一个基于云变量的简易排行榜",
+    "top.sparrowhe.easier_rank.category": "简易排行榜",
+    "top.sparrowhe.easier_rank.addToRank": "将用户 [USER] 成绩 [VALUE] 添加到排行榜",
+    "top.sparrowhe.easier_rank.getRankScore": "获取用户 [USER] 排行榜成绩",
+    "top.sparrowhe.easier_rank.getRank": "获取用户 [USER] 排行榜名次",
+    "top.sparrowhe.easier_rank.initRank": "初始化排行榜 数据: [DATA], 比较方式: [COMPARE_MODE], 排序方式: [SORT_MODE]",
+    "top.sparrowhe.easier_rank.getRankList": "获取 Markdown 排行榜列表",
+    "top.sparrowhe.easier_rank.sortRank": "排序排行榜",
+    "top.sparrowhe.easier_rank.compare_mode.menu.leq": "≤",
+    "top.sparrowhe.easier_rank.compare_mode.menu.geq": "≥",
+    "top.sparrowhe.easier_rank.compare_mode.menu.asc": "升序",
+    "top.sparrowhe.easier_rank.compare_mode.menu.desc": "降序"
+}
