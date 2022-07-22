@@ -1,5 +1,6 @@
 const { Extension, type, api } = require('clipcc-extension');
 
+
 class EasierRank extends Extension {
     onInit() {
         console.log("EasierRank extension loaded");
@@ -62,7 +63,7 @@ class EasierRank extends Extension {
                 if (this.SortMode === "desc") {
                     this.Rank.data.reverse();
                 }
-                return JSON.stringify(Buffer.from(this.Rank).toString('base64'));
+                return window.btoa(JSON.stringify(this.Rank));
                 // this.Rank.data.push(rankData);
             }
         });
@@ -145,7 +146,7 @@ class EasierRank extends Extension {
                 }
             },
             function: (args) => {
-                this.Rank = JSON.parse(Buffer.from(args.DATA, 'base64').toString("utf-8"));
+                this.Rank = JSON.parse(window.atob(args.DATA));
                 this.CompareMode = args.COMPARE_MODE;
                 this.SortMode = args.SORT_MODE;
             }
@@ -218,7 +219,7 @@ class EasierRank extends Extension {
                     } else if (args.TYPE === "value") {
                         rankList += `${this.Rank.data[i].value}`;
                     } else if (args.TYPE === "all") {
-                        rankList += `${args.SPLIT_CHAR}${this.Rank.data[i].player}${args.SPLIT_CHAR}${this.Rank.data[i].value}`;
+                        rankList += `${this.Rank.data[i].player}${args.SPLIT_CHAR}${this.Rank.data[i].value}`;
                     }
                     if (i !== this.Rank.data.length - 1) {
                         rankList += args.NEWLINE_CHAR;
