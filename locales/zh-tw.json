@@ -1,0 +1,19 @@
+{
+    "top.sparrowhe.easier_rank.name": "簡易排行榜",
+    "top.sparrowhe.easier_rank.description": "一個基於雲端變數的簡易排行榜",
+    "top.sparrowhe.easier_rank.category": "簡易排行榜",
+    "top.sparrowhe.easier_rank.addToRank": "將使用者 [USER] 成績 [VALUE] 添加到排行榜",
+    "top.sparrowhe.easier_rank.getRankScore": "獲取使用者 [USER] 排行榜成績",
+    "top.sparrowhe.easier_rank.getRank": "獲取使用者 [USER] 排行榜名次",
+    "top.sparrowhe.easier_rank.initRank": "初始化排行榜 數據: [DATA], 比較方式: [COMPARE_MODE], 排序方式: [SORT_MODE]",
+    "top.sparrowhe.easier_rank.getRankListMarkdown": "獲取 Markdown 排行榜列表",
+    "top.sparrowhe.easier_rank.sortRank": "排序排行榜",
+    "top.sparrowhe.easier_rank.getRankList": "獲取排行榜的 [TYPE], 使用 [SPLIT_CHAR] 分割, 使用 [NEWLINE_CHAR] 換行",
+    "top.sparrowhe.easier_rank.type.menu.player": "玩家",
+    "top.sparrowhe.easier_rank.type.menu.value": "成績",
+    "top.sparrowhe.easier_rank.type.menu.all": "全部",
+    "top.sparrowhe.easier_rank.compare_mode.menu.leq": "≤",
+    "top.sparrowhe.easier_rank.compare_mode.menu.geq": "≥",
+    "top.sparrowhe.easier_rank.compare_mode.menu.asc": "升序",
+    "top.sparrowhe.easier_rank.compare_mode.menu.desc": "降序"
+}
